@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+	
+	
+
+	Todo.create( title: 'Pie de cueca', description: 'Bailar un pie de cueca con una chinita o un huaso', image: 'Cueca.png')
+    Todo.create( title: 'Volantin', description: 'Elevar un volantin', image: 'Volantin.png')
+    Todo.create( title: 'Rayuela', description: 'Jugar un partido de rayuela y ganar!!!', image: 'rayuela.png')
+    Todo.create( title: 'Terremoto!!', description: 'Tomarse un rico terremoto con tu amigo/a o pareja', image: 'Terremoto.png')
+    Todo.create( title: 'Choripan póh!', description: 'no puedes olvidar zamparte un buen choripan', image: 'Choripan.png')
+    Todo.create( title: 'Anticucho', description: 'Su buen anticucho con los amigos', image: 'anticucho.png')
+    Todo.create( title: 'A la Fonda', description: 'visitar uyna fonda con tu grupo de amigos o familiares', image: 'Fonda.png')
+    Todo.create( title: 'El postre', description: 'Comerse su rico mote con huesillo despues de la comida (o antes)', image: 'mote.png')
+    Todo.create( title: 'Caña', description: 'Despues de todo el festejo su aspirina para pasar la resaca', image: 'Aspirinas.png')

@@ -1,2 +1,17 @@
-<h1>Todo#index</h1>
-<p>Find me in app/views/todo/index.html.erb</p>
+<div class="container">
+	<div class="row">
+		<% @Todos.each_slice(3) do |row| %>
+			<% row.each do |todo| %>
+				<div class="col-md-3 offset-md-1">
+					<%= todo.title %>
+					<%= todo.image %>
+					<% if user_signed_in? %>
+					<%= link_to 'Done', completed_path(todo), :class => 'btn btn-info' %>		
+					<% end %>			
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+
