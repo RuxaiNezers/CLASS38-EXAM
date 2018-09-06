@@ -8,7 +8,10 @@ class TodoController < ApplicationController
       @Done.each do |done|
         @done << done.todo_id 
       end
+      @completes = @done.length
+      @total = Todo.all.count
     end
+
   end
 
 

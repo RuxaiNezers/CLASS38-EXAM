@@ -28,7 +28,7 @@ class CompletedsController < ApplicationController
   	@todo = Todo.find(params[:todo_id])
   	@user = current_user
   	if Completed.where(:user_id => @user, :todo_id => @todo).update_all(:done => false)
-  		redirect_to root_path
+  		redirect_to root_path,notice:'Todo Completed'
   	else
   		redirect_to root_path, alert:"Can't save, please retry"	
   	end

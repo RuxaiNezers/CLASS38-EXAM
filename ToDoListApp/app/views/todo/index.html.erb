@@ -3,7 +3,6 @@
 		<% @Todos.each_slice(3) do |row| %>
 			<% row.each do |todo| %>
 				<div class="col-md-3 offset-md-1">
-					<%= todo.id %>	
 					<%= todo.title %>
 					<%= todo.image %>
 					<% if user_signed_in? %>
