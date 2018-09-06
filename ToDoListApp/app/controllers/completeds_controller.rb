@@ -10,13 +10,13 @@ class CompletedsController < ApplicationController
   	if @n.empty?
 		@completed = Completed.new(todo: @todo, user: current_user, done: true)
 	  	if @completed.save
-	  		redirect_to root_path, notice:'Todo Completed'
+	  		redirect_to root_path, notice:'To-Do Completed'
 	  	else
 	  		redirect_to root_path, alert:"Can't save, please retry" 
 	  	end
   	else
   		if Completed.where(:user_id => @user, :todo_id => @todo).update_all(:done => true)
-  			redirect_to root_path
+  			redirect_to root_path, notice:'To-Do Completed'
   		else
   			redirect_to root_path, alert:"Can't save, please retry"	
   		end
@@ -28,7 +28,7 @@ class CompletedsController < ApplicationController
   	@todo = Todo.find(params[:todo_id])
   	@user = current_user
   	if Completed.where(:user_id => @user, :todo_id => @todo).update_all(:done => false)
-  		redirect_to root_path,notice:'Todo Completed'
+  		redirect_to root_path,notice:'To-Do Fixed'
   	else
   		redirect_to root_path, alert:"Can't save, please retry"	
   	end

@@ -4,7 +4,7 @@
 			<% row.each do |todo| %>
 				<div class="col-md-3 offset-md-1">
 					<%= todo.title %>
-					<%= todo.image %>
+					<%= link_to "#{todo.image}", todo_path(todo) %>
 					<% if user_signed_in? %>
 						<% if @done.include?(todo.id) %>
 							<%= link_to 'Mark as Incomplete', todo_completed_path(todo, current_user), :class => 'btn btn-warning', method: :patch %>

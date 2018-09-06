@@ -8,12 +8,13 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <% if user_signed_in? %>
-          <%= @completes %> / <%= @total %> Todos Completed  
+          <%= @completes %> / <%= @total %> To-Do Completed  
         <% end %>        
         <br>
       </li>
-
-      <li class="nav-item pull-md-right">
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item navbar-right">
       <% if user_signed_in? %>
         <%= current_user.email %>
         <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        

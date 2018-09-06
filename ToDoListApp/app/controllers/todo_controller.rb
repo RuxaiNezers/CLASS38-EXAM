@@ -14,6 +14,13 @@ class TodoController < ApplicationController
 
   end
 
+  def show
+    @users = []
+    @Todo= Todo.find(params[:id])
+    if user_signed_in?  
+      @users = User.joins(:completeds).where(completeds: {todo_id: @Todo})
+    end
+  end
 
   def todos_params
       params.require(:todo).permit(:title, :description, :image)

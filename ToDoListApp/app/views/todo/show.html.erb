@@ -1,0 +1,8 @@
+<h1> <%= @Todo.title %> </h1>	
+<p> <%= @Todo.description %> </p>
+<p> <%= @Todo.image %> </p>
+<%= link_to 'Return', root_path, :class => 'btn btn-success' %>
+
+<% @users.each do |user| %>
+<%= user.email %>
+<% end %>
