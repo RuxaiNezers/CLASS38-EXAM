@@ -6,3 +6,10 @@
 <% @users.each do |user| %>
 <%= user.email %>
 <% end %>
+
+<br>
+
+<% @Top5.each do |top| %>
+<%= top.email %>
+<%= top.updated_at %>
+<% end %>
