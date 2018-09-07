@@ -26,8 +26,6 @@ class TodoController < ApplicationController
       end
       @completes = @done.length
       @total = Todo.all.count
-
-
       @Top5 = User.joins(:completeds).where(completeds: {todo_id: @Todo, done: true}).order('updated_at').limit(5)
     end
   end

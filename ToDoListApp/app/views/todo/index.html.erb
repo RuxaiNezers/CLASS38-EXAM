@@ -2,20 +2,27 @@
 	<div class="row">
 		<% @Todos.each_slice(3) do |row| %>
 			<% row.each do |todo| %>
-				<div class="col-md-3 offset-md-1">
-					<%= todo.title %>
-					<%= link_to "#{todo.image}", todo_path(todo) %>
+				<div class="col-md-3">
+					<div class="card">
+						<%= link_to image_tag("#{todo.image}", size: '150x130', class: 'card-img-top' ),todo_path(todo)%>
+					</div>
+					<h3><%= todo.title %></h3>
+					
 					<% if user_signed_in? %>
 						<% if @done.include?(todo.id) %>
-							<%= link_to 'Mark as Incomplete', todo_completed_path(todo, current_user), :class => 'btn btn-warning', method: :patch %>
+							<div><%= link_to 'No lo complete oeh', todo_completed_path(todo, current_user), :class => 'btn btn-warning', method: :patch %></div>
 						<% else %>
-							<%= link_to 'Mark as Completed', todo_completeds_path(todo), :class => 'btn btn-info', method: :post %>
+							<div><%= link_to 'Vamoh a completaloh', todo_completeds_path(todo), :class => 'btn btn-info', method: :post %></div>
 						<% end %>
-					<% end %>			
-				</div>
+					<% end %>
+
+					</div>
 			<% end %>
+			<div class="w-100" style="margin-top: 20px"></div>
 		<% end %>
+
 	</div>
 </div>
+
 
 	
