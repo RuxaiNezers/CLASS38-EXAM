@@ -1,15 +1,35 @@
-<h1> <%= @Todo.title %> </h1>	
-<p> <%= @Todo.description %> </p>
-<p> <%= @Todo.image %> </p>
-<%= link_to 'Return', root_path, :class => 'btn btn-success' %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<%= image_tag("#{@Todo.image}", style:'height:350px;width:300px;margin-bottom:20px;' ) %>	
+			<h3> <%= @Todo.title %> </h3>	
+			<p> <%= @Todo.description %> </p>
+			
+			<%= link_to 'A regresar', root_path, :class => 'btn btn-success' %>
+		</div>
+		<div class="col-md-6">
+			<h1> Los Primeros 5</h1>
+			<% @Top5.each_with_index do |top, i| %> 
+				<% if  (i == 0)  %>
+				<h2><%=top.email %></h2>	
+				<%= image_tag top.picture, width: '150px', height: '100px' %>
+				<% else %>
+				<h5> <%=top.email %></h5>
+				<%= image_tag top.picture, width: '100px',height: '70px' %>
+				<% end %>   	
+				<% i+=1 %>
+			<% end %>
+		</div>
 
-<% @users.each do |user| %>
-<%= user.email %>
-<% end %>
+	</div>
+	<div class="row">
+		<div class="col-md-4 offset-md-4">
+			<h2>Todos los otros</h2>
+			<% @others.each do |user| %>
+			<p><%= user.email %></p>
+			<% end %>
+		</div>
+	</div>
+</div>
 
-<br>
 
-<% @Top5.each do |top| %>
-<%= top.email %>
-<%= top.updated_at %>
-<% end %>

@@ -18,11 +18,10 @@
     Todo.create( title: 'El postre', description: 'Comerse su rico mote con huesillo despues de la comida (o antes)', image: 'mote.png')
     Todo.create( title: 'Caña', description: 'Despues de todo el festejo su aspirina para pasar la resaca', image: 'aspirinas.jpg')
 
-    User.create( email: 'correo1@gmail.com', encrypted_password: '123456', picture: 'perfil1.jpeg')
-    User.create( email: 'correo2@gmail.com', encrypted_password: '123456', picture: 'perfil2.jpg')
-    User.create( email: 'correo3@gmail.com', encrypted_password: '123456', picture: 'perfil3.jpg')
-    User.create( email: 'correo4@gmail.com', encrypted_password: '123456', picture: 'perfil4.jpeg')
-    User.create( email: 'correo5@gmail.com', encrypted_password: '123456', picture: 'perfil5.jpg')
-    User.create( email: 'correo6@gmail.com', encrypted_password: '123456', picture: 'perfil6.jpg')
-    User.create( email: 'correo7@gmail.com', encrypted_password: '123456', picture: 'perfil7.jpg')
-
+    User.create(email: "correo1@gmail.com", password: "123456789", picture: 'perfil1.jpeg')
+    User.create(email: "correo2@gmail.com", password: "123456789", picture: 'perfil2.jpg')
+    User.create(email: "correo3@gmail.com", password: "123456789", picture: 'perfil3.jpg')
+    User.create(email: "correo4@gmail.com", password: "123456789", picture: 'perfil4.jpeg')
+    User.create(email: "correo5@gmail.com", password: "123456789", picture: 'perfil5.jpg')
+    User.create(email: "correo6@gmail.com", password: "123456789", picture: 'perfil6.jpg')
+    User.create(email: "correo7@gmail.com", password: "123456789", picture: 'perfil7.jpg')
